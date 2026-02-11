@@ -1,30 +1,16 @@
-
 import React from 'react';
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { ProblemSection } from './components/ProblemSection';
-import { GuideSection } from './components/GuideSection';
-import { PlanSection } from './components/PlanSection';
-import { SuccessSection } from './components/SuccessSection';
-import { FailureSection } from './components/FailureSection';
-import { TestimonialsSection } from './components/TestimonialsSection';
-import { FooterSection } from './components/FooterSection';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HomePage } from './pages/HomePage';
+import { GalleryPage } from './pages/GalleryPage';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <main>
-        <Hero />
-        <ProblemSection />
-        <GuideSection />
-        <PlanSection />
-        <SuccessSection />
-        <FailureSection />
-        <TestimonialsSection />
-      </main>
-      <FooterSection />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

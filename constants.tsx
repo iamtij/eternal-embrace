@@ -4,9 +4,10 @@ import { Calendar, MapPin, Sun } from 'lucide-react';
 import { NavItem, Step, Testimonial } from './types';
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Our Services', href: '#services' },
   { label: 'Why Us', href: '#why-us' },
   { label: 'The Plan', href: '#plan' },
+  { label: 'Our Services', href: '#services' },
+  { label: 'Gallery', href: '/gallery' },
   { label: 'Testimonials', href: '#testimonials' },
 ];
 
