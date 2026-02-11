@@ -18,6 +18,10 @@ export const GalleryPage: React.FC = () => {
   const [lightboxImage, setLightboxImage] = useState<typeof GALLERY_IMAGES[0] | null>(null);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setLightboxImage(null);
     };
