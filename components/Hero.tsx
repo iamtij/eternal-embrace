@@ -17,18 +17,12 @@ export const Hero: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-2 w-full sm:w-auto max-w-sm sm:max-w-none mx-auto">
+          <div className="flex justify-center pt-2">
             <a 
               href="#contact"
               className="bg-brand-gradient text-white px-8 sm:px-10 py-5 rounded-full font-bold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2 min-h-[56px] inline-flex items-center justify-center touch-manipulation"
             >
               Talk to Us Today
-            </a>
-            <a 
-              href="#services"
-              className="text-slate-600 px-8 sm:px-10 py-5 font-semibold text-base sm:text-lg hover:text-brand-green transition-colors flex items-center justify-center tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2 rounded-full min-h-[56px] touch-manipulation"
-            >
-              View Available Spaces
             </a>
           </div>
 
