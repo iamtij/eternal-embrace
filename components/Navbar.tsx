@@ -18,8 +18,15 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navSurface =
+    isOpen
+      ? 'bg-white border-b border-slate-100 py-3 md:py-3'
+      : isScrolled || location.pathname !== '/'
+        ? 'bg-white/80 backdrop-blur-xl border-b border-slate-100 py-3 md:py-3'
+        : 'bg-transparent py-5 md:py-6';
+
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled || location.pathname !== '/' ? 'bg-white/80 backdrop-blur-xl border-b border-slate-100 py-3 md:py-3' : 'bg-transparent py-5 md:py-6'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${navSurface}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex justify-between items-center">
           <Link to="/" className="transition-transform hover:scale-105 active:scale-95">
@@ -86,7 +93,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Nav - large touch targets, elderly-friendly text */}
       {isOpen && (
-        <div className="md:hidden bg-white/98 backdrop-blur-2xl border-b border-slate-100 absolute top-full left-0 w-full animate-in fade-in slide-in-from-top-4 duration-300 max-h-[85vh] overflow-y-auto">
+        <div className="md:hidden bg-white border-b border-slate-100 absolute top-full left-0 w-full animate-in fade-in slide-in-from-top-4 duration-300 max-h-[85vh] overflow-y-auto">
           <div className="px-5 py-8 space-y-2">
             {NAV_ITEMS.map((item) => {
               const isPageRoute = item.href.startsWith('/');
