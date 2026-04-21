@@ -12,6 +12,34 @@ const GALLERY_IMAGES = [
     src: '/eternal-facade-2.png',
     alt: 'Eternal Embrace facade — grand entrance with ceremonial ribbon and floral arrangements',
   },
+  {
+    src: '/gallery-3.jpg',
+    alt: 'Bright lobby with a large floral arrangement, twin staircases, and chandelier',
+  },
+  {
+    src: '/gallery-4.jpg',
+    alt: 'Serene lounge with seating, ottomans, and floor-to-ceiling glass overlooking open grounds',
+  },
+  {
+    src: '/gallery-5.jpg',
+    alt: 'Spacious assembly hall with rows of seating and warm cove-lit ceiling',
+  },
+  {
+    src: '/gallery-6.jpg',
+    alt: 'Modern chapel-style room with seating facing glass doors to lawns and sky',
+  },
+  {
+    src: '/gallery-7.jpg',
+    alt: 'Contemporary memorial building with landscaped grounds and open walkways',
+  },
+  {
+    src: '/gallery-8.jpg',
+    alt: 'Memorial park chapel building with glass facade and surrounding grounds',
+  },
+  {
+    src: '/gallery-9.jpg',
+    alt: 'Columbarium hallway with niches, floral tributes, and open views to greenery',
+  },
 ];
 
 export const GalleryPage: React.FC = () => {
@@ -50,9 +78,9 @@ export const GalleryPage: React.FC = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
-            {GALLERY_IMAGES.map((img, i) => (
+            {GALLERY_IMAGES.map((img) => (
               <button
-                key={i}
+                key={img.src}
                 type="button"
                 onClick={() => setLightboxImage(img)}
                 className="group relative overflow-hidden rounded-2xl shadow-md w-full text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2 min-h-[200px] touch-manipulation"

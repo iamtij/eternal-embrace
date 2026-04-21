@@ -23,7 +23,7 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex justify-between items-center">
           <Link to="/" className="transition-transform hover:scale-105 active:scale-95">
-            <Logo className="h-10 md:h-12" />
+            <Logo className="h-11 md:h-[calc(3.3rem+20px)]" />
           </Link>
 
           {/* Desktop Nav */}

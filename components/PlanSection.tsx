@@ -3,12 +3,18 @@ import React from 'react';
 export const PlanSection: React.FC = () => {
   const steps = [
     { title: "Schedule a Visit", desc: "A private consultation or tour at your convenience." },
-    { title: "Choose the Space", desc: "Select a peaceful arrangement that fits your family." },
-    { title: "Sacred Remembrance", desc: "A beautiful setting to honor and visit their life." }
+    {
+      title: "Choose What Fits Your Family",
+      desc: "Whether you’re considering cremation, chapel services, columbarium, or another path—we help you select the options that honor your loved one and reflect what matters to you.",
+    },
+    {
+      title: "Care Through Every Step",
+      desc: "We coordinate the details with compassion so arrangements feel calm and clear—you can focus on remembrance while we help make it all happen with ease.",
+    },
   ];
 
   return (
-    <section id="plan" className="py-14 sm:py-20 md:py-28 bg-slate-50/50">
+    <section id="how-it-works" className="py-14 sm:py-20 md:py-28 bg-slate-50/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-16">
           <h2 className="text-[2rem] sm:text-4xl md:text-5xl font-serif font-bold text-slate-950 tracking-tight leading-[1.2]">A Simple Path Forward</h2>
@@ -31,7 +37,7 @@ export const PlanSection: React.FC = () => {
             href="#contact"
             className="inline-flex bg-brand-gradient text-white px-8 sm:px-10 py-5 rounded-full font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 min-h-[56px] items-center justify-center touch-manipulation"
           >
-            Reserve a Space
+            Talk to us
           </a>
           <p className="mt-6 sm:mt-8 text-[1rem] sm:text-sm text-slate-400 font-medium">We answer every question with care and respect.</p>
         </div>

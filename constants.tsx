@@ -1,11 +1,11 @@
 
 import React from 'react';
-import { Calendar, MapPin, Sun } from 'lucide-react';
+import { Calendar, HeartHandshake, Layers } from 'lucide-react';
 import { NavItem, Step, Testimonial } from './types';
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Why Us', href: '#why-us' },
-  { label: 'The Plan', href: '#plan' },
+  { label: 'How It Works', href: '#how-it-works' },
   { label: 'Our Services', href: '#services' },
   { label: 'Gallery', href: '/gallery' },
   { label: 'Testimonials', href: '#testimonials' },
@@ -20,15 +20,17 @@ export const STEPS: Step[] = [
   },
   {
     number: 2,
-    title: 'Choose the Space',
-    description: 'Choose the space and arrangement that fits your family.',
-    icon: <MapPin className="w-8 h-8 text-emerald-600" />,
+    title: 'Choose What Fits Your Family',
+    description:
+      'Whether you’re considering cremation, chapel services, columbarium, or another path—we help you select the options that honor your loved one and reflect what matters to you.',
+    icon: <Layers className="w-8 h-8 text-emerald-600" />,
   },
   {
     number: 3,
-    title: 'Honor Your Loved One',
-    description: 'Honor your loved one in a peaceful and beautiful setting.',
-    icon: <Sun className="w-8 h-8 text-emerald-600" />,
+    title: 'Care Through Every Step',
+    description:
+      'We coordinate the details with compassion so arrangements feel calm and clear—you can focus on remembrance while we help make it all happen with ease.',
+    icon: <HeartHandshake className="w-8 h-8 text-emerald-600" />,
   },
 ];
 
