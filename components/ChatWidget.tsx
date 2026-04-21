@@ -6,6 +6,14 @@ const CHAT_URL = 'https://chty.lovable.app/chat/eternal-embrace';
 export const ChatWidget: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
+  /** Once true, iframe stays mounted so closing only hides the panel (no reload on reopen). */
+  const [chatMounted, setChatMounted] = useState(false);
+
+  const openChat = () => {
+    setChatMounted(true);
+    setOpen(true);
+    setFullscreen(false);
+  };
 
   const closeChat = () => {
     setOpen(false);
@@ -17,17 +25,20 @@ export const ChatWidget: React.FC = () => {
       className="fixed bottom-5 right-5 z-[9999] flex flex-col items-end gap-3"
       aria-live="polite"
     >
-      {open && (
+      {chatMounted && (
         <div
           id="chty-chat-panel"
           className={
-            fullscreen
-              ? 'fixed inset-0 z-[10000] flex h-[100dvh] w-full flex-col overflow-hidden rounded-none bg-white shadow-none'
-              : 'relative flex h-[min(600px,70vh)] w-[min(400px,calc(100vw-2rem))] flex-col overflow-hidden rounded-xl bg-white shadow-[0_10px_40px_rgba(0,0,0,0.3)]'
+            !open
+              ? 'hidden'
+              : fullscreen
+                ? 'fixed inset-0 z-[10000] flex h-[100dvh] w-full flex-col overflow-hidden rounded-none bg-white shadow-none'
+                : 'relative flex h-[min(600px,70vh)] w-[min(400px,calc(100vw-2rem))] flex-col overflow-hidden rounded-xl bg-white shadow-[0_10px_40px_rgba(0,0,0,0.3)]'
           }
           role="dialog"
           aria-label="Chat"
-          aria-modal={fullscreen ? 'true' : undefined}
+          aria-modal={fullscreen && open ? 'true' : undefined}
+          aria-hidden={!open}
         >
           <div className="absolute top-2 right-2 z-10 flex items-center gap-1">
             <button
@@ -63,10 +74,7 @@ export const ChatWidget: React.FC = () => {
       {!open && (
         <button
           type="button"
-          onClick={() => {
-            setOpen(true);
-            setFullscreen(false);
-          }}
+          onClick={openChat}
           className="flex max-w-[calc(100vw-2.5rem)] items-center gap-3 rounded-full border border-slate-200 bg-white py-3 pl-4 pr-5 text-left shadow-lg transition-all hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.99] touch-manipulation"
           aria-haspopup="dialog"
         >
